@@ -1,0 +1,68 @@
+.container {max-width: 900px; width: 100%; margin: 0 auto;}
+.four { width: 23.00%; max-width: 23.00%;}
+
+.inline{
+    display: inline-block;
+    position: relative;
+    width: 220px;
+    height: 200px;
+    text-align: center;
+
+}
+
+.inline2{
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 350px;
+}
+
+.study, study2, study3, study4{
+    width: 900px;
+    height: 700px;
+}
+
+.BTN{
+  width: 180px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.BTN:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+img { 
+    max-width: 40%; 
+    height: auto; 
+}
+
+h1{
+	font-weight: 200;
+}
+
+h1{
+	text-align: center;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #2fcc71;
+	max-width: 40%;
+	margin: 20px auto;
+}
+video{
+    width: auto;
+    height: 300px;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>circle distance</title>
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script>
+	var stage;
+	var rcircle, ycircle;
+	var roffset, yoffset;
+	var dist;
+	
+	function init () {
+		//Create a stage by getting a reference to the canvas
+    stage = new createjs.Stage("canvas");
+    //Create a Shape DisplayObject.
+    xline = new createjs.Shape();
+    yline = new createjs.Shape();
+    rcircle = new createjs.Shape();
+	ycircle = new createjs.Shape();
+        
+    
+    xline.graphics.setStrokeStyle(1).beginStroke("rgba(0,0,0,1)");
+    xline.graphics.moveTo(0, 150);  
+    xline.graphics.lineTo(300, 150);
+    xline.graphics.endStroke();
+        
+    yline.graphics.setStrokeStyle(1).beginStroke("rgba(0,0,0,1)");
+    yline.graphics.moveTo(150, 0);  
+    yline.graphics.lineTo(150, 300);
+    yline.graphics.endStroke();
+        
+    rcircle.graphics.beginFill("red").drawCircle(0, 0, 3);
+	ycircle.graphics.beginFill("#b097c9").drawCircle(0, 0, 20);
+   
+    rcircle.x = 150;
+    rcircle.y = 150;
+	
+	ycircle.x = 200;
+	ycircle.y = 150;
+        
+
+    stage.addChild(xline);
+    stage.addChild(yline);
+	stage.addChild(rcircle);
+	stage.addChild(ycircle);
+	
+	dist = new createjs.Text("", "15px Arial", "#FF0000");
+	stage.addChild(dist);
+	dist.lineHeight = 17;
+	dist.lineWidth = 300;
+	
+	rcircle.addEventListener("mousedown", rhandleOffset);
+	function rhandleOffset () {
+		
+		    roffset = {x:rcircle.x - stage.mouseX, y:rcircle.y - stage.mouseY};
+		    
+	}
+	rcircle.addEventListener("pressmove", rhandleDrag);
+	function rhandleDrag() {
+		   
+			rcircle.x = stage.mouseX+roffset.x;
+			rcircle.y = stage.mouseY+roffset.y;
+			stage.update();
+	}
+	ycircle.addEventListener("mousedown", yhandleOffset);
+	function yhandleOffset () {
+		
+		    yoffset = {x:ycircle.x - stage.mouseX, y:ycircle.y - stage.mouseY};
+		    
+	}
+	ycircle.addEventListener("pressmove", yhandleDrag);
+	function yhandleDrag() {
+		   
+			ycircle.x = stage.mouseX+yoffset.x;
+			ycircle.y = stage.mouseY+yoffset.y;
+			stage.update();
+	}
+	
+    stage.update();
+	
+	createjs.Ticker.setFPS(60);
+	//Update stage will render next frame
+    createjs.Ticker.addEventListener("tick", handleDist);
+     
+
+	}
+
+    function handleDist()
+	{
+	var diffX = ycircle.x - rcircle.x;
+	var diffY = ycircle.y - rcircle.y;
+	
+	var distance = Math.round(Math.sqrt(diffX*diffX+diffY*diffY));
+	var distance2 = Math.round(diffX);
+	var distance3 = Math.round(diffX);
+    
+	dist.text = "("+"x-"+distance2+")^2 + (y-"+distance3+")^2 = r^2";
+	stage.update();
+	}
+    
+
+</script>
+
+</head>
+
+<body onload="init()">
+ <canvas id="canvas" width="300" height="300" ></canvas>
+</body>
+</html>

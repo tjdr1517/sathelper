@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../main_style.css">
+		<link type='text/css' rel='stylesheet' href='fomular.css'/>
+    
+<script src="http://code.createjs.com/easeljs-0.6.0.min.js"></script>
+<script src="http://code.createjs.com/tweenjs-0.4.0.min.js"></script>
+<script src="http://code.createjs.com/movieclip-0.6.0.min.js"></script>
+<script src="../Flash/2cha.js"></script>
+<script src="../Flash/center%20of%20mass.js"></script>
+
+<script>
+var canvas, stage, exportRoot;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	exportRoot = new lib._2cha();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.setFPS(24);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+</script>
+    
+</head>
+<body onload="init();">
+    <div class="c-top">
+  <div class="c-bar c-white c-wide c-padding c-card" >
+    <a href="../main.html" class="c-bar-item c-button" style="color:black; text-decoration:none"><b>K_SAT</b> HELPER</a>
+      
+    <div class="c-right">
+        
+      <a href="../subject/subject.html" class="c-bar-item c-button" style="color:black; text-decoration:none">By Subject</a>
+        
+      <a class="c-bar-item c-button" style="color:black; text-decoration:none">|</a>
+        
+      <a href="../grade/grade.html" class="c-bar-item c-button" style="color:black; text-decoration:none">By Grade</a>
+      <a class="c-bar-item c-button" style="color:black; text-decoration:none">|</a>
+  
+      <a href="../sat/sat.html" class="c-bar-item c-button" style=" color:black; text-decoration:none">Mock SAT</a>
+      <a class="c-bar-item c-button" style="color:black; text-decoration:none">|</a>
+        
+      <a href="fomular.html" class="c-bar-item c-button" style=" color:black; text-decoration:none">Fomular</a>
+    <a class="c-bar-item c-button" style=" color:black; text-decoration:none"></a>
+    </div>
+  </div>
+</div> 
+    
+    <br><br><br>
+    <div class="c-row-padding c-grayscale c-center">
+
+	<canvas onload="init();" id="canvas" width="550" height="400"></canvas>
+      <h3>Mathematics for senior</h3>
+      <p class="c-opacity">Calculus & geometry and vector</p>
+      <p><button class="BTN" onclick="location.href='math/math.html'" style="width:300pt">Study</button></p>
+        <br>
+        
+        
+	<object type="application/x-shockwave-flash" data="../Flash/center of mass.swf" width="750" height="500">
+<param name="movie" value="../Flash/center of mass.swf" />
+<param name='wmode' value='transparent' />
+<param name='allowScriptAccess' value='always' />
+</object>
+      <h3>Science for any highschool student</h3>
+      <p>Psychics & Chemistry </p>
+      <p><button class="BTN" onclick="location.href='science/science.html'" style="width:300pt">Study</button></p>
+        
+
+    </div>
+    
+ 
+    
+</body>

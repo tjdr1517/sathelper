@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+		<title>Subject</title>
+		<link type='text/css' rel='stylesheet' href='subject.css'/>
+        <link rel="stylesheet" href="../main_style.css">
+		<link rel="stylesheet" href="style.css">
+        <script type='text/javascript' src='subject.js'></script>
+        <script type='text/javascript' src='question.js'></script>
+        
+	</head>
+    
+
+    <body>     
+        
+        
+        <div class="c-top">
+  <div class="c-bar c-white c-wide c-padding c-card" >
+    <a href="../main.html" class="c-bar-item c-button" style="color:black; text-decoration:none"><b>K_SAT</b> HELPER</a>
+      
+    <div class="c-right">
+        
+      <a href="subject.html" class="c-bar-item c-button" style="color:black; text-decoration:none">By Subject</a>
+
+      <a class="c-bar-item" style="color:black; text-decoration:none">|</a>
+        
+      <a href="../grade/grade.html" class="c-bar-item c-button" style="color:black; text-decoration:none">By Grade</a>
+      <a class="c-bar-item" style="color:black; text-decoration:none">|</a>
+  
+      <a href="../sat/sat.html" class="c-bar-item c-button" style=" color:black; text-decoration:none">Mock SAT</a>
+      <a class="c-bar-item" style="color:black; text-decoration:none">|</a>
+        
+      <a href="../fomular/fomular.html" class="c-bar-item c-button" style=" color:black; text-decoration:none">Fomular</a>
+    <a class="c-bar-item" style=" color:black; text-decoration:none"></a>
+    </div>
+      
+  </div>
+</div>
+        
+           <br><br><br>
+        
+        <div class="container">
+		<h1>By Subject</h1>
+		<form class="form cf">
+			<section class="subject cf">
+				<h2>Select a Subject:</h2>
+				<input type="radio" name="radio1" id="Korean" value="Korean" onclick=radio_korean_on(); checked><label class="Korean-label four col" for="Korean">Korean</label>
+				<input type="radio" name="radio1" id="Math" value="Math"><label class="Math-label four col" for="Math" onclick="radio_Math_on();">Math</label>
+				<input type="radio" name="radio1" id="English" value="English"><label class="English-label four col" for="English" onclick="radio_English_on();">English</label>
+                </section>
+            
+            <!-- 국어-->
+            <section class="detail cf">
+				<h2>Select a Detail:</h2>
+				<input type="radio" name="radio2" id="ALL" value="ALL" checked><label class="ALL-label four col" for="ALL" style="display:block">ALL</label>
+
+				<input type="radio" name="radio2" id="Grammar" value="Grammar"><label class="Grammar-label four col" for="Grammar" style="display:block">Grammar</label>
+                <input type="radio" name="radio2" id="Litterature" value="Litterature"><label class="Litterature-label four col" for="Litterature" style="display:blcok">Litterature</label>
+                <input type="radio" name="radio2" id="Inscription" value="Inscription"><label class="Inscription-label four col" for="Inscription" style="display:blcok">Inscription</label>
+                
+            <!-- 수학-->
+				<input type="radio" name="radio2" id="Geometry" value="Geometry" ><label class="Geometry-label four col" for="Geometry" style="display:none">Geometry</label>
+                <input type="radio" name="radio2" id="Vector" value="Vector"><label class="Vector-label four col" for="Vector" style="display:none">Vector</label>
+                <input type="radio" name="radio2" id="Probability" value="Probability"><label class="Probability-label four col" for="Probability" style="display:none">Probability</label>
+    
+            <!-- 영어-->   
+                <input type="radio" name="radio2" id="GrammarE" value="GrammarE" ><label class="GrammarE-label four col" for="GrammarE" style="display:none">Grammar</label>
+                <input type="radio" name="radio2" id="Blank" value="Blank"><label class="Blank-label four col" for="Blank" style="display:none">Blank</label>
+                <input type="radio" name="radio2" id="Topic_inference" value="Topic_inference"><label class="Topic_inference-label four col" for="Topic_inference" style="display:none">Topic inference</label>
+			</section>
+            
+            
+            
+			<section class="term cf">
+				<h2>Select term:</h2>
+				<input type="radio" name="radio3" id="Last_1" value="Last_1"><label class="Last_1-label four col" for="Last_1">Last 1 year</label>
+				<input type="radio" name="radio3" id="Last_3" value="Last_3"><label class="Last_3-label four col" for="Last_3">Last 3 years</label>
+				<input type="radio" name="radio3" id="Last_5" value="Last_5" checked><label class="Last_5-label four col" for="Last_5">Last 5 years</label>
+			</section>	
+            
+            		</form>
+        <input class="submit" type="button" value="Submit" onclick="submit()">
+            
+            
+            <!-- test -->
+            
+		<br><br>
+		
+		<form name ="random">
+            
+        <div class=wrapper>
+        <div class="inline1">
+		<p style="color:green">Question</p>
+        <textarea id="now_pick" cols=50 rows=25 style="overflow: hidden" readonly></textarea>
+        </div>
+            <span>&nbsp;&nbsp;</span>
+            
+        <div class="inline2" style="display: none">
+            <div class="picture_box">
+            <img src="" id="paragraph" >
+                </div>
+            </div>
+            
+        <div class="inline3">
+        <br><br>
+		<p style="color:red">Explanation</p>
+        <textarea id="explanation" cols=105 rows=15 style="overflow: hidden" readonly></textarea>
+        </div> 
+        </div>
+            
+		<br><br>
+        <span>Remain Question Number : </span> <input type="txt" name="exist"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>Answer : </span> <input type="txt" name="answer">
+            
+        <br><br><br>
+            
+            
+        <input type="button" class="BTN" id="button1" onclick="mix_num();" value="Mix Question" /><span>ㅤㅤ</span>
+		<input type="button" class="BTN" id="button2" onclick="pick();" value="Show Next Question" style="width: 200px;"/><span>ㅤㅤ</span>
+		<input type="button" class="BTN" id="button4" onclick="show_explanation();" value="Show Explanation" />
+		</form>
+            
+        <br><br><br>
+                </div>
+    </body>
+</html>

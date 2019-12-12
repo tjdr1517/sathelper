@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+		<title>SAT</title>
+		<link type='text/css' rel='stylesheet' href='subject.css'/>
+        <link rel="stylesheet" href="../main_style.css">
+		<link rel="stylesheet" href="sat.css">
+        <script type='text/javascript' src='sat.js'></script>
+        <script type='text/javascript' src='question.js'></script>
+        
+	</head>
+    
+
+    <body>     
+        
+        
+        <div class="c-top">
+  <div class="c-bar c-white c-wide c-padding c-card" >
+    <a href="../main.html" class="c-bar-item c-button" style="color:black; text-decoration:none"><b>K_SAT</b> HELPER</a>
+      
+    <div class="c-right">
+        
+      <a href="../subject/subject.html" class="c-bar-item c-button" style="color:black; text-decoration:none">By Subject</a>
+
+      <a class="c-bar-item" style="color:black; text-decoration:none">|</a>
+        
+      <a href="../grade/grade.html" class="c-bar-item c-button" style="color:black; text-decoration:none">By Grade</a>
+      <a class="c-bar-item" style="color:black; text-decoration:none">|</a>
+  
+      <a href="sat.html" class="c-bar-item c-button" style=" color:black; text-decoration:none">Mock SAT</a>
+      <a class="c-bar-item" style="color:black; text-decoration:none">|</a>
+        
+      <a href="../fomular/fomular.html" class="c-bar-item c-button" style=" color:black; text-decoration:none">Fomular</a>
+    <a class="c-bar-item" style=" color:black; text-decoration:none"></a>
+    </div>
+      
+  </div>
+</div>
+        
+           <br><br><br>
+        
+         <div class="container">
+		<h1>A Mock SAT</h1>
+		<form class="form cf">
+			<section class="subject cf">
+				<h2>Select a Subject:</h2>
+				<input type="radio" name="radio1" id="Korean" value="Korean"  checked><label class="Korean-label four col" for="Korean">Korean</label>
+				<input type="radio" name="radio1" id="Math" value="Math"><label class="Math-label four col" for="Math">Math</label>
+				<input type="radio" name="radio1" id="English" value="English"><label class="English-label four col" for="English">English</label>
+                </section>
+    
+            		</form>
+             
+        <input class="submit" type="button" value="Submit" onclick="submit()">
+            
+            
+            <!-- test -->
+            
+		<br><br>
+		
+		<form name ="random">
+            
+        <div class=wrapper>
+        <div class="inline1">
+		<p style="color:green">Question</p>
+        <textarea id="now_pick" cols=50 rows=25 style="overflow: hidden" readonly></textarea>
+        </div>
+            <span>&nbsp;&nbsp;</span>
+            
+        <div class="inline2" style="display: none">
+            <div class="picture_box">
+            <img src="" id="paragraph" >
+                </div>
+            </div>
+            
+        <div class="inline3" style="display: none">
+        <br><br>
+		<p style="color:red">Explanation</p>
+        <textarea id="explanation" cols=105 rows=15 style="overflow: hidden;" readonly></textarea>
+        </div> 
+        </div>
+            
+		<br><br><br><br>
+        <span>Remain Question Number : </span> <input type="txt" name="exist" readonly><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            
+        <div class="input_As" style="display: inline-block">
+        <span>input_Answer : </span> <input type="txt" name="input_answer">
+        </div>
+            
+        <div class="Answer" style="display: none"; readonly>
+        <span>Answer : </span> <input type="txt" name="answer">
+        </div>
+            
+        <br><br><br>
+            
+            
+        <input type="button" class="BTN" id="button1" onclick="mix_num();" value="Mix Question" /><span>ㅤㅤ</span>
+		<input type="button" class="BTN" id="button2" onclick="pick();" value="Show Next Question" style="width: 200px;"/><span>ㅤㅤ</span>
+		<input type="button" class="BTN" id="button4" onclick="show_explanation();" value="Show Explanation" />
+		</form>
+            
+        <br><br><br>
+                </div>
+        <input type="button" class="BTN" id="button4" onclick="input();" value="Show Explanation" />
+    </body>
+</html>
